@@ -161,6 +161,61 @@ public class SPM_frame extends JFrame {
 		selectYear.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e_year) {
 				p2_an.setText((String) e_year.getItem());
+				if (e_year.getStateChange() == ItemEvent.SELECTED) {
+					ArrayList<String> luni = new ArrayList<String>();	//Construct an array list of string containing months
+					luni.add("ian");
+					luni.add("feb");
+					luni.add("mar");
+					luni.add("apr");
+					luni.add("mai");
+					luni.add("iun");
+					luni.add("iul");
+					luni.add("aug");
+					luni.add("sept");
+					luni.add("oct");
+					luni.add("nov");
+					luni.add("dec");
+
+					ArrayList<Integer> buc_luni = null;
+
+					/*
+				Identific randurile ce trebuie adunate dupa urmatoarele criterii:
+				- produsul selectat in panelul de top sa fie gasit pe coloana H (8)
+				- anul selectat in panelul de top sa fie gasit pe coloana I (9)
+				- luna selectata sa fie gasita in coloana D (4)
+				Adun bucatile gasite pe coloana F (6)
+					 */
+					try {
+						buc_luni = SumMonth.sumQuantityMonth(p1l1.getText(), p2_an.getText(), luni);
+					} catch (InvalidFormatException | FileNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					buc_luni.get(0).toString();
+					p2_ianbuc.setText(String.format("%,d", buc_luni.get(0)));
+					buc_luni.get(1).toString();
+					p2_febbuc.setText(String.format("%,d", buc_luni.get(1)));
+					buc_luni.get(2).toString();
+					p2_marbuc.setText(String.format("%,d", buc_luni.get(2)));
+					buc_luni.get(3).toString();
+					p2_aprbuc.setText(String.format("%,d", buc_luni.get(3)));				
+					buc_luni.get(4).toString();
+					p2_maibuc.setText(String.format("%,d", buc_luni.get(4)));
+					buc_luni.get(5).toString();
+					p2_iunbuc.setText(String.format("%,d", buc_luni.get(5)));
+					buc_luni.get(6).toString();
+					p2_iulbuc.setText(String.format("%,d", buc_luni.get(6)));
+					buc_luni.get(7).toString();
+					p2_augbuc.setText(String.format("%,d", buc_luni.get(7)));
+					buc_luni.get(8).toString();
+					p2_septbuc.setText(String.format("%,d", buc_luni.get(8)));
+					buc_luni.get(9).toString();
+					p2_octbuc.setText(String.format("%,d", buc_luni.get(9)));
+					buc_luni.get(10).toString();
+					p2_novbuc.setText(String.format("%,d", buc_luni.get(10)));
+					buc_luni.get(11).toString();
+					p2_decbuc.setText(String.format("%,d", buc_luni.get(11)));
+				}
 			}
 		});
 		
@@ -245,65 +300,6 @@ public class SPM_frame extends JFrame {
 				p2_2019eur.setText(df2.format(eur_ani.get(3)) + " EUR");
 				p2_2020eur.setText(df2.format(eur_ani.get(4)) + " EUR");
 				p2_2021eur.setText(df2.format(eur_ani.get(5)) + " EUR");
-				
-				ArrayList<String> luni = new ArrayList<String>();	//Construct an array list of string containing months
-				luni.add("ian");
-				luni.add("feb");
-				luni.add("mar");
-				luni.add("apr");
-				luni.add("mai");
-				luni.add("iun");
-				luni.add("iul");
-				luni.add("aug");
-				luni.add("sept");
-				luni.add("oct");
-				luni.add("nov");
-				luni.add("dec");
-				
-				ArrayList<Integer> buc_luni = null;
-
-/*
-				Identific randurile ce trebuie adunate dupa urmatoarele criterii:
-				- produsul selectat in panelul de top sa fie gasit pe coloana H (8)
-				- anul selectat in panelul de top sa fie gasit pe coloana I (9)
-				- luna selectata sa fie gasita in coloana D (4)
-				Adun bucatile gasite pe coloana F (6)
-*/
-				try {
-					buc_luni = SumMonth.sumQuantityMonth((String)e.getItem(), p2_an.getText(), luni);
-				} catch (InvalidFormatException | FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-								
-				buc_luni.get(0).toString();
-				p2_ianbuc.setText(String.format("%,d", buc_luni.get(0)));
-				buc_luni.get(1).toString();
-				p2_febbuc.setText(String.format("%,d", buc_luni.get(1)));
-				buc_luni.get(2).toString();
-				p2_marbuc.setText(String.format("%,d", buc_luni.get(2)));
-				buc_luni.get(3).toString();
-				p2_aprbuc.setText(String.format("%,d", buc_luni.get(3)));				
-				buc_luni.get(4).toString();
-				p2_maibuc.setText(String.format("%,d", buc_luni.get(4)));
-				buc_luni.get(5).toString();
-				p2_iunbuc.setText(String.format("%,d", buc_luni.get(5)));
-				buc_luni.get(6).toString();
-				p2_iulbuc.setText(String.format("%,d", buc_luni.get(6)));
-				buc_luni.get(7).toString();
-				p2_augbuc.setText(String.format("%,d", buc_luni.get(7)));
-				buc_luni.get(8).toString();
-				p2_septbuc.setText(String.format("%,d", buc_luni.get(8)));
-				buc_luni.get(9).toString();
-				p2_octbuc.setText(String.format("%,d", buc_luni.get(9)));
-				buc_luni.get(10).toString();
-				p2_novbuc.setText(String.format("%,d", buc_luni.get(10)));
-				buc_luni.get(11).toString();
-				p2_decbuc.setText(String.format("%,d", buc_luni.get(11)));
-
-				
-				
-				
 			}	
 		});
 		
