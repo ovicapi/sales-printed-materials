@@ -1,7 +1,7 @@
 import java.io.IOException;
 import javax.swing.JFrame;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-	
+
 public class SPM_main {
 	protected static final int EXIT_ON_CLOSE = 0;
 
