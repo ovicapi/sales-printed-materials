@@ -72,6 +72,7 @@ public class SPM_frame extends JFrame {
 	private JLabel p2_2019eur;
 	private JLabel p2_2020eur;
 	private JLabel p2_2021eur;
+	private JLabel p2_anbuc;
 	private JLabel p2_ianbuc;
 	private JLabel p2_febbuc;
 	private JLabel p2_marbuc;
@@ -84,6 +85,20 @@ public class SPM_frame extends JFrame {
 	private JLabel p2_octbuc;
 	private JLabel p2_novbuc;
 	private JLabel p2_decbuc;
+
+	private JLabel p2_aneur;
+	private JLabel p2_ianeur;
+	private JLabel p2_febeur;
+	private JLabel p2_mareur;
+	private JLabel p2_apreur;
+	private JLabel p2_maieur;
+	private JLabel p2_iuneur;
+	private JLabel p2_iuleur;
+	private JLabel p2_augeur;
+	private JLabel p2_septeur;
+	private JLabel p2_octeur;
+	private JLabel p2_noveur;
+	private JLabel p2_deceur;
 	
 	static String first = new String("Raport pe ani");
     static String second = new String("Raport pe luni");
@@ -177,14 +192,15 @@ public class SPM_frame extends JFrame {
 					luni.add("dec");
 
 					ArrayList<Integer> buc_luni = null;
-
-					/*
+					Integer buc_an = 0;
+/*
 				Identific randurile ce trebuie adunate dupa urmatoarele criterii:
 				- produsul selectat in panelul de top sa fie gasit pe coloana H (8)
 				- anul selectat in panelul de top sa fie gasit pe coloana I (9)
 				- luna selectata sa fie gasita in coloana D (4)
 				Adun bucatile gasite pe coloana F (6)
-					 */
+*/
+					
 					try {
 						buc_luni = SumMonth.sumQuantityMonth(p1l1.getText(), p2_an.getText(), luni);
 					} catch (InvalidFormatException | FileNotFoundException e1) {
@@ -215,6 +231,56 @@ public class SPM_frame extends JFrame {
 					p2_novbuc.setText(String.format("%,d", buc_luni.get(10)));
 					buc_luni.get(11).toString();
 					p2_decbuc.setText(String.format("%,d", buc_luni.get(11)));
+					
+					buc_an = buc_luni.get(0) + buc_luni.get(1) + buc_luni.get(2) + buc_luni.get(3) + buc_luni.get(4) + buc_luni.get(5) + buc_luni.get(6) + buc_luni.get(7)
+					 	   + buc_luni.get(8) + buc_luni.get(9) + buc_luni.get(10) + buc_luni.get(11);
+					p2_anbuc.setText(String.format("%,d", buc_an));
+
+					ArrayList<Double> eur_luni = null;
+					Double eur_an = 0.0;
+
+/*
+					Identific randurile ce trebuie adunate dupa urmatoarele criterii:
+					- produsul selectat in panelul de top sa fie gasit pe coloana H (8)
+					- anul selectat in panelul de top sa fie gasit pe coloana I (9)
+					- luna selectata sa fie gasita in coloana D (4)
+					Adun valorile gasite pe coloana E (5)
+*/				
+				
+					try {
+						eur_luni = SumMonth.sumValueMonth(p1l1.getText(), p2_an.getText(), luni);
+					} catch (InvalidFormatException | FileNotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}					
+					eur_luni.get(0).toString();
+					p2_ianeur.setText(df2.format(eur_luni.get(0)));
+					eur_luni.get(1).toString();
+					p2_febeur.setText(df2.format(eur_luni.get(1)));
+					eur_luni.get(2).toString();
+					p2_mareur.setText(df2.format(eur_luni.get(2)));
+					eur_luni.get(3).toString();
+					p2_apreur.setText(df2.format(eur_luni.get(3)));				
+					eur_luni.get(4).toString();
+					p2_maieur.setText(df2.format(eur_luni.get(4)));
+					eur_luni.get(5).toString();
+					p2_iuneur.setText(df2.format(eur_luni.get(5)));
+					eur_luni.get(6).toString();
+					p2_iuleur.setText(df2.format(eur_luni.get(6)));
+					eur_luni.get(7).toString();
+					p2_augeur.setText(df2.format(eur_luni.get(7)));
+					eur_luni.get(8).toString();
+					p2_septeur.setText(df2.format(eur_luni.get(8)));
+					eur_luni.get(9).toString();
+					p2_octeur.setText(df2.format(eur_luni.get(9)));
+					eur_luni.get(10).toString();
+					p2_noveur.setText(df2.format(eur_luni.get(10)));
+					eur_luni.get(11).toString();
+					p2_deceur.setText(df2.format(eur_luni.get(11)));
+					
+					eur_an = eur_luni.get(0) + eur_luni.get(1) + eur_luni.get(2) + eur_luni.get(3) + eur_luni.get(4) + eur_luni.get(5) + eur_luni.get(6) + eur_luni.get(7)
+				 	   + eur_luni.get(8) + eur_luni.get(9) + eur_luni.get(10) + eur_luni.get(11);
+					p2_aneur.setText(df2.format(eur_an));					
 				}
 			}
 		});
@@ -577,6 +643,14 @@ public class SPM_frame extends JFrame {
 		p2_2021eur.setForeground(Color.BLACK);	
 		p2_2021eur.setVisible(true);
 
+		p2_anbuc = new JLabel();												// Quantity of selected product sales for selected year
+		p2_anbuc.setPreferredSize(rowTitleDimension);
+		p2_anbuc.setBounds(200, 60, 80, 30);
+		p2_anbuc.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_anbuc.setFont(rowTitleFont);
+		p2_anbuc.setForeground(Color.BLACK);	
+		p2_anbuc.setVisible(false);
+		
 		p2_ianbuc = new JLabel();												// Quantity of selected product sales for selected year in January
 		p2_ianbuc.setPreferredSize(rowTitleDimension);
 		p2_ianbuc.setBounds(320, 60, rowTitleDimension.width, rowTitleDimension.height);
@@ -673,6 +747,111 @@ public class SPM_frame extends JFrame {
 		p2_decbuc.setForeground(Color.BLACK);	
 		p2_decbuc.setVisible(false);
 
+		p2_aneur = new JLabel();												// Value of selected product sales for selected year
+		p2_aneur.setPreferredSize(rowTitleDimension);
+		p2_aneur.setBounds(200, 90, 80, 30);
+		p2_aneur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_aneur.setFont(rowTitleFont);
+		p2_aneur.setForeground(Color.BLACK);	
+		p2_aneur.setVisible(false);
+		
+		p2_ianeur = new JLabel();												// Value of selected product sales for selected year in January
+		p2_ianeur.setPreferredSize(rowTitleDimension);
+		p2_ianeur.setBounds(320, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_ianeur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_ianeur.setFont(rowTitleFont);
+		p2_ianeur.setForeground(Color.BLACK);	
+		p2_ianeur.setVisible(false);		
+		
+		p2_febeur = new JLabel();												// Value of selected product sales for selected year in February
+		p2_febeur.setPreferredSize(rowTitleDimension);
+		p2_febeur.setBounds(390, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_febeur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_febeur.setFont(rowTitleFont);
+		p2_febeur.setForeground(Color.BLACK);	
+		p2_febeur.setVisible(false);
+		
+		p2_mareur = new JLabel();												// Value of selected product sales for selected year in March
+		p2_mareur.setPreferredSize(rowTitleDimension);
+		p2_mareur.setBounds(460, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_mareur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_mareur.setFont(rowTitleFont);
+		p2_mareur.setForeground(Color.BLACK);	
+		p2_mareur.setVisible(false);		
+
+		p2_apreur = new JLabel();												// Value of selected product sales for selected year in April
+		p2_apreur.setPreferredSize(rowTitleDimension);
+		p2_apreur.setBounds(530, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_apreur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_apreur.setFont(rowTitleFont);
+		p2_apreur.setForeground(Color.BLACK);	
+		p2_apreur.setVisible(false);
+
+		p2_maieur = new JLabel();												// Value of selected product sales for selected year in May
+		p2_maieur.setPreferredSize(rowTitleDimension);
+		p2_maieur.setBounds(600, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_maieur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_maieur.setFont(rowTitleFont);
+		p2_maieur.setForeground(Color.BLACK);	
+		p2_maieur.setVisible(false);	
+		
+		p2_iuneur = new JLabel();												// Value of selected product sales for selected year in June
+		p2_iuneur.setPreferredSize(rowTitleDimension);
+		p2_iuneur.setBounds(670, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iuneur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_iuneur.setFont(rowTitleFont);
+		p2_iunbuc.setForeground(Color.BLACK);	
+		p2_iunbuc.setVisible(false);
+
+		p2_iuleur = new JLabel();												// Value of selected product sales for selected year in July
+		p2_iuleur.setPreferredSize(rowTitleDimension);
+		p2_iuleur.setBounds(740, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iuleur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_iuleur.setFont(rowTitleFont);
+		p2_iuleur.setForeground(Color.BLACK);	
+		p2_iuleur.setVisible(false);
+
+		p2_augeur = new JLabel();												// Value of selected product sales for selected year in August
+		p2_augeur.setPreferredSize(rowTitleDimension);
+		p2_augeur.setBounds(810, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_augeur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_augeur.setFont(rowTitleFont);
+		p2_augeur.setForeground(Color.BLACK);	
+		p2_augeur.setVisible(false);
+
+		p2_septeur = new JLabel();												// Value of selected product sales for selected year in September
+		p2_septeur.setPreferredSize(rowTitleDimension);
+		p2_septeur.setBounds(880, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_septeur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_septeur.setFont(rowTitleFont);
+		p2_septeur.setForeground(Color.BLACK);	
+		p2_septeur.setVisible(false);
+		
+		p2_octeur = new JLabel();												// Value of selected product sales for selected year in October
+		p2_octeur.setPreferredSize(rowTitleDimension);
+		p2_octeur.setBounds(950, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_octeur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_octeur.setFont(rowTitleFont);
+		p2_octeur.setForeground(Color.BLACK);	
+		p2_octeur.setVisible(false);
+
+		p2_noveur = new JLabel();												// Value of selected product sales for selected year in November
+		p2_noveur.setPreferredSize(rowTitleDimension);
+		p2_noveur.setBounds(1020, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_noveur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_noveur.setFont(rowTitleFont);
+		p2_noveur.setForeground(Color.BLACK);	
+		p2_noveur.setVisible(false);
+
+		p2_deceur = new JLabel();												// Value of selected product sales for selected year in December
+		p2_deceur.setPreferredSize(rowTitleDimension);
+		p2_deceur.setBounds(1090, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_deceur.setHorizontalAlignment(SwingConstants.CENTER);
+		p2_deceur.setFont(rowTitleFont);
+		p2_deceur.setForeground(Color.BLACK);	
+		p2_deceur.setVisible(false);
+		
+		
 		//Add labels to bottomPanel
 		
 		bottomPanel.add(p2_buc);
@@ -709,6 +888,7 @@ public class SPM_frame extends JFrame {
 		bottomPanel.add(p2_2019eur);
 		bottomPanel.add(p2_2020eur);
 		bottomPanel.add(p2_2021eur);
+		bottomPanel.add(p2_anbuc);
 		bottomPanel.add(p2_ianbuc);
 		bottomPanel.add(p2_febbuc);
 		bottomPanel.add(p2_marbuc);
@@ -721,6 +901,19 @@ public class SPM_frame extends JFrame {
 		bottomPanel.add(p2_octbuc);
 		bottomPanel.add(p2_novbuc);
 		bottomPanel.add(p2_decbuc);
+		bottomPanel.add(p2_aneur);
+		bottomPanel.add(p2_ianeur);
+		bottomPanel.add(p2_febeur);
+		bottomPanel.add(p2_mareur);
+		bottomPanel.add(p2_apreur);
+		bottomPanel.add(p2_maieur);
+		bottomPanel.add(p2_iuneur);
+		bottomPanel.add(p2_iuleur);
+		bottomPanel.add(p2_augeur);
+		bottomPanel.add(p2_septeur);
+		bottomPanel.add(p2_octeur);
+		bottomPanel.add(p2_noveur);
+		bottomPanel.add(p2_deceur);
 		
 		// Add the bottomPanel to the splitPane
 		
@@ -765,6 +958,7 @@ public class SPM_frame extends JFrame {
 				p2_2019eur.setVisible(true);
 				p2_2020eur.setVisible(true);
 				p2_2021eur.setVisible(true);
+				p2_anbuc.setVisible(false);
 				p2_ianbuc.setVisible(false);
 				p2_febbuc.setVisible(false);
 				p2_marbuc.setVisible(false);
@@ -777,7 +971,20 @@ public class SPM_frame extends JFrame {
 				p2_octbuc.setVisible(false);
 				p2_novbuc.setVisible(false);
 				p2_decbuc.setVisible(false);
-				
+				p2_aneur.setVisible(false);
+				p2_ianeur.setVisible(false);
+				p2_febeur.setVisible(false);
+				p2_mareur.setVisible(false);
+				p2_apreur.setVisible(false);
+				p2_maieur.setVisible(false);
+				p2_iuneur.setVisible(false);
+				p2_iuleur.setVisible(false);
+				p2_augeur.setVisible(false);
+				p2_septeur.setVisible(false);
+				p2_octeur.setVisible(false);
+				p2_noveur.setVisible(false);
+				p2_deceur.setVisible(false);
+
 			}
 			else if (e.getActionCommand() == second){
 //				System.out.println("Raport pe LUNI a fost selectat");
@@ -814,6 +1021,7 @@ public class SPM_frame extends JFrame {
 				p2_2019eur.setVisible(false);
 				p2_2020eur.setVisible(false);
 				p2_2021eur.setVisible(false);
+				p2_anbuc.setVisible(true);
 				p2_ianbuc.setVisible(true);
 				p2_febbuc.setVisible(true);
 				p2_marbuc.setVisible(true);
@@ -826,6 +1034,19 @@ public class SPM_frame extends JFrame {
 				p2_octbuc.setVisible(true);
 				p2_novbuc.setVisible(true);
 				p2_decbuc.setVisible(true);
+				p2_aneur.setVisible(true);
+				p2_ianeur.setVisible(true);
+				p2_febeur.setVisible(true);
+				p2_mareur.setVisible(true);
+				p2_apreur.setVisible(true);
+				p2_maieur.setVisible(true);
+				p2_iuneur.setVisible(true);
+				p2_iuleur.setVisible(true);
+				p2_augeur.setVisible(true);
+				p2_septeur.setVisible(true);
+				p2_octeur.setVisible(true);
+				p2_noveur.setVisible(true);
+				p2_deceur.setVisible(true);
 			}
 		}
 	}
