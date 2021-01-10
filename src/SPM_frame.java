@@ -30,7 +30,7 @@ public class SPM_frame extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private static final int FRAME_WIDTH = 1200;
+	private static final int FRAME_WIDTH = 1550;
 	private static final int FRAME_HEIGHT = 800;
 	
 	private JSplitPane splitPane;
@@ -114,7 +114,7 @@ public class SPM_frame extends JFrame {
 	public void createComponents() throws InvalidFormatException, FileNotFoundException {
 
 		splitPane = new JSplitPane();										// Construct a splitPane that will hold the top and he bottom panels
-		setPreferredSize(new Dimension(1200, 800));
+		setPreferredSize(new Dimension(1550, 800));
 		getContentPane().setLayout(new GridLayout());
 		getContentPane().add(splitPane);
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
@@ -126,7 +126,7 @@ public class SPM_frame extends JFrame {
 		topPanel.setLayout(null);
 		
 		JLabel p1l1 = new JLabel("");										// Construct a label to catch the selected product
-		p1l1.setPreferredSize(new Dimension(750, 40));
+		p1l1.setPreferredSize(new Dimension(1120, 40));
 		Dimension size1 = p1l1.getPreferredSize();
 		p1l1.setBounds(20, 55, size1.width, size1.height);
 		p1l1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -136,11 +136,11 @@ public class SPM_frame extends JFrame {
 		p1l1.setForeground(Color.RED);
 		
 		JRadioButton byYears = new JRadioButton(first, true);				// Construct a radioButton to select the report by years
-		byYears.setBounds(830, 25, 150, 30);
+		byYears.setBounds(1210, 25, 150, 30);
 		byYears.setActionCommand(first);
 
 		JRadioButton byMonths = new JRadioButton(second);					// Construct a radioButton to select the report by months
-		byMonths.setBounds(830, 65, 150, 30);
+		byMonths.setBounds(1210, 65, 150, 30);
 		byMonths.setActionCommand(second);
 		
 		ButtonGroup group = new ButtonGroup();								// Group the above radioButtons
@@ -167,7 +167,7 @@ public class SPM_frame extends JFrame {
 		String[] years_array = years.toArray(new String[years.size()]);	
 		
 		selectYear = new JComboBox<>(years_array);
-		selectYear.setBounds(1020, 65, 110, 30);
+		selectYear.setBounds(1360, 65, 110, 30);
 		selectYear.setBackground(Color.WHITE);
 		selectYear.setVisible(false);
 		
@@ -389,7 +389,7 @@ public class SPM_frame extends JFrame {
 		bottomPanel.setLayout(null);
 
 		Font rowTitleFont = new Font("Verdana", Font.BOLD, 14);
-		Dimension rowTitleDimension = new Dimension(50,30);
+		Dimension rowTitleDimension = new Dimension(80,30);
 		
 		p2_buc = new JLabel ("Vanzari (BUC)");
 		p2_buc.setBounds(30, 60, 120, 30);
@@ -429,7 +429,7 @@ public class SPM_frame extends JFrame {
 
 		p2l3 = new JLabel("feb");												// Column title "feb" for the report by months
 		p2l3.setPreferredSize(rowTitleDimension);
-		p2l3.setBounds(390, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l3.setBounds(420, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l3.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l3.setFont(rowTitleFont);
 		p2l3.setForeground(Color.BLACK);
@@ -437,7 +437,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l4 = new JLabel("mar");												// Column title "mar" for the report by months
 		p2l4.setPreferredSize(rowTitleDimension);
-		p2l4.setBounds(460, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l4.setBounds(520, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l4.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l4.setFont(rowTitleFont);
 		p2l4.setForeground(Color.BLACK);	
@@ -445,7 +445,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l5 = new JLabel("apr");												// Column title "apr" for the report by months
 		p2l5.setPreferredSize(rowTitleDimension);
-		p2l5.setBounds(530, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l5.setBounds(620, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l5.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l5.setFont(rowTitleFont);
 		p2l5.setForeground(Color.BLACK);			
@@ -453,7 +453,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l6 = new JLabel("mai");												// Column title "mai" for the report by months
 		p2l6.setPreferredSize(rowTitleDimension);
-		p2l6.setBounds(600, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l6.setBounds(720, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l6.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l6.setFont(rowTitleFont);
 		p2l6.setForeground(Color.BLACK);		
@@ -461,7 +461,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l7 = new JLabel("iun");												// Column title "iun" for the report by months
 		p2l7.setPreferredSize(rowTitleDimension);
-		p2l7.setBounds(670, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l7.setBounds(820, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l7.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l7.setFont(rowTitleFont);
 		p2l7.setForeground(Color.BLACK);
@@ -469,7 +469,7 @@ public class SPM_frame extends JFrame {
 
 		p2l8 = new JLabel("iul");												// Column title "iul" for the report by months
 		p2l8.setPreferredSize(rowTitleDimension);
-		p2l8.setBounds(740, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l8.setBounds(920, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l8.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l8.setFont(rowTitleFont);
 		p2l8.setForeground(Color.BLACK);	
@@ -477,7 +477,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l9 = new JLabel("aug");												// Column title "aug" for the report by months
 		p2l9.setPreferredSize(rowTitleDimension);
-		p2l9.setBounds(810, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l9.setBounds(1020, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l9.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l9.setFont(rowTitleFont);
 		p2l9.setForeground(Color.BLACK);	
@@ -485,7 +485,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l10 = new JLabel("sept");												// Column title "sept" for the report by months
 		p2l10.setPreferredSize(rowTitleDimension);
-		p2l10.setBounds(880, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l10.setBounds(1120, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l10.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l10.setFont(rowTitleFont);
 		p2l10.setForeground(Color.BLACK);	
@@ -493,7 +493,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l11 = new JLabel("oct");												// Column title "oct" for the report by months
 		p2l11.setPreferredSize(rowTitleDimension);
-		p2l11.setBounds(950, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l11.setBounds(1220, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l11.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l11.setFont(rowTitleFont);
 		p2l11.setForeground(Color.BLACK);	
@@ -501,7 +501,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l12 = new JLabel("nov");												// Column title "nov" for the report by months
 		p2l12.setPreferredSize(rowTitleDimension);
-		p2l12.setBounds(1020, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l12.setBounds(1320, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l12.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l12.setFont(rowTitleFont);
 		p2l12.setForeground(Color.BLACK);	
@@ -509,7 +509,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l13 = new JLabel("dec");												// Column title "dec" for the report by months
 		p2l13.setPreferredSize(rowTitleDimension);
-		p2l13.setBounds(1090, 10, rowTitleDimension.width, rowTitleDimension.height);
+		p2l13.setBounds(1420, 10, rowTitleDimension.width, rowTitleDimension.height);
 		p2l13.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l13.setFont(rowTitleFont);
 		p2l13.setForeground(Color.BLACK);	
@@ -525,7 +525,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l15 = new JLabel("TOTAL an 2017");									// Column title "TOTAL an 2017" for the report by years
 		p2l15.setPreferredSize(rowTitleDimension);
-		p2l15.setBounds(350, 10, 150, 30);
+		p2l15.setBounds(400, 10, 150, 30);
 		p2l15.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l15.setFont(rowTitleFont);
 		p2l15.setForeground(Color.BLACK);	
@@ -533,7 +533,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l16 = new JLabel("TOTAL an 2018");									// Column title "TOTAL an 2018" for the report by years
 		p2l16.setPreferredSize(rowTitleDimension);
-		p2l16.setBounds(500, 10, 150, 30);
+		p2l16.setBounds(600, 10, 150, 30);
 		p2l16.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l16.setFont(rowTitleFont);
 		p2l16.setForeground(Color.BLACK);	
@@ -541,7 +541,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l17 = new JLabel("TOTAL an 2019");									// Column title "TOTAL an 2019" for the report by years
 		p2l17.setPreferredSize(rowTitleDimension);
-		p2l17.setBounds(650, 10, 150, 30);
+		p2l17.setBounds(800, 10, 150, 30);
 		p2l17.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l17.setFont(rowTitleFont);
 		p2l17.setForeground(Color.BLACK);	
@@ -549,7 +549,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l18 = new JLabel("TOTAL an 2020");									// Column title "TOTAL an 2020" for the report by years
 		p2l18.setPreferredSize(rowTitleDimension);
-		p2l18.setBounds(800, 10, 150, 30);
+		p2l18.setBounds(1000, 10, 150, 30);
 		p2l18.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l18.setFont(rowTitleFont);
 		p2l18.setForeground(Color.BLACK);	
@@ -557,7 +557,7 @@ public class SPM_frame extends JFrame {
 		
 		p2l19 = new JLabel("TOTAL an 2021");									// Column title "TOTAL an 2021" for the report by years
 		p2l19.setPreferredSize(rowTitleDimension);
-		p2l19.setBounds(950, 10, 150, 30);
+		p2l19.setBounds(1200, 10, 150, 30);
 		p2l19.setHorizontalAlignment(SwingConstants.CENTER);
 		p2l19.setFont(rowTitleFont);
 		p2l19.setForeground(Color.BLACK);	
@@ -571,31 +571,31 @@ public class SPM_frame extends JFrame {
 		p2_2016buc.setVisible(true);
 		
 		p2_2017buc = new JLabel();												// Quantity of selected product sales for 2017
-		p2_2017buc.setBounds(350, 60, 150, 30);
+		p2_2017buc.setBounds(400, 60, 150, 30);
 		p2_2017buc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2017buc.setFont(rowTitleFont);
 		p2_2017buc.setForeground(Color.BLACK);	
 		
 		p2_2018buc = new JLabel();												// Quantity of selected product sales for 2018
-		p2_2018buc.setBounds(500, 60, 150, 30);
+		p2_2018buc.setBounds(600, 60, 150, 30);
 		p2_2018buc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2018buc.setFont(rowTitleFont);
 		p2_2018buc.setForeground(Color.BLACK);	
 		
 		p2_2019buc = new JLabel();												// Quantity of selected product sales for 2019
-		p2_2019buc.setBounds(650, 60, 150, 30);
+		p2_2019buc.setBounds(800, 60, 150, 30);
 		p2_2019buc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2019buc.setFont(rowTitleFont);
 		p2_2019buc.setForeground(Color.BLACK);	
 		
 		p2_2020buc = new JLabel();												// Quantity of selected product sales for 2020
-		p2_2020buc.setBounds(800, 60, 150, 30);
+		p2_2020buc.setBounds(1000, 60, 150, 30);
 		p2_2020buc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2020buc.setFont(rowTitleFont);
 		p2_2020buc.setForeground(Color.BLACK);	
 		
 		p2_2021buc = new JLabel();												// Quantity of selected product sales for 2021
-		p2_2021buc.setBounds(950, 60, 150, 30);
+		p2_2021buc.setBounds(1200, 60, 150, 30);
 		p2_2021buc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2021buc.setFont(rowTitleFont);
 		p2_2021buc.setForeground(Color.BLACK);	
@@ -609,35 +609,35 @@ public class SPM_frame extends JFrame {
 		p2_2016eur.setVisible(true);
 
 		p2_2017eur = new JLabel();												// Value of selected product sales for 2017
-		p2_2017eur.setBounds(350, 90, 150, 30);
+		p2_2017eur.setBounds(400, 90, 150, 30);
 		p2_2017eur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2017eur.setFont(rowTitleFont);
 		p2_2017eur.setForeground(Color.BLACK);	
 		p2_2017eur.setVisible(true);
 
 		p2_2018eur = new JLabel();												// Value of selected product sales for 2018
-		p2_2018eur.setBounds(500, 90, 150, 30);
+		p2_2018eur.setBounds(600, 90, 150, 30);
 		p2_2018eur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2018eur.setFont(rowTitleFont);
 		p2_2018eur.setForeground(Color.BLACK);	
 		p2_2018eur.setVisible(true);
 
 		p2_2019eur = new JLabel();												// Value of selected product sales for 2019
-		p2_2019eur.setBounds(650, 90, 150, 30);
+		p2_2019eur.setBounds(800, 90, 150, 30);
 		p2_2019eur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2019eur.setFont(rowTitleFont);
 		p2_2019eur.setForeground(Color.BLACK);	
 		p2_2019eur.setVisible(true);
 
 		p2_2020eur = new JLabel();												// Value of selected product sales for 2020
-		p2_2020eur.setBounds(800, 90, 150, 30);
+		p2_2020eur.setBounds(1000, 90, 150, 30);
 		p2_2020eur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2020eur.setFont(rowTitleFont);
 		p2_2020eur.setForeground(Color.BLACK);	
 		p2_2020eur.setVisible(true);
 
 		p2_2021eur = new JLabel();												// Value of selected product sales for 2021
-		p2_2021eur.setBounds(950, 90, 150, 30);
+		p2_2021eur.setBounds(1200, 90, 150, 30);
 		p2_2021eur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_2021eur.setFont(rowTitleFont);
 		p2_2021eur.setForeground(Color.BLACK);	
@@ -661,7 +661,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_febbuc = new JLabel();												// Quantity of selected product sales for selected year in February
 		p2_febbuc.setPreferredSize(rowTitleDimension);
-		p2_febbuc.setBounds(390, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_febbuc.setBounds(420, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_febbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_febbuc.setFont(rowTitleFont);
 		p2_febbuc.setForeground(Color.BLACK);	
@@ -669,7 +669,7 @@ public class SPM_frame extends JFrame {
 
 		p2_marbuc = new JLabel();												// Quantity of selected product sales for selected year in March
 		p2_marbuc.setPreferredSize(rowTitleDimension);
-		p2_marbuc.setBounds(460, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_marbuc.setBounds(520, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_marbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_marbuc.setFont(rowTitleFont);
 		p2_marbuc.setForeground(Color.BLACK);	
@@ -677,7 +677,7 @@ public class SPM_frame extends JFrame {
 
 		p2_aprbuc = new JLabel();												// Quantity of selected product sales for selected year in April
 		p2_aprbuc.setPreferredSize(rowTitleDimension);
-		p2_aprbuc.setBounds(530, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_aprbuc.setBounds(620, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_aprbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_aprbuc.setFont(rowTitleFont);
 		p2_aprbuc.setForeground(Color.BLACK);	
@@ -685,7 +685,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_maibuc = new JLabel();												// Quantity of selected product sales for selected year in May
 		p2_maibuc.setPreferredSize(rowTitleDimension);
-		p2_maibuc.setBounds(600, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_maibuc.setBounds(720, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_maibuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_maibuc.setFont(rowTitleFont);
 		p2_maibuc.setForeground(Color.BLACK);	
@@ -693,7 +693,7 @@ public class SPM_frame extends JFrame {
 
 		p2_iunbuc = new JLabel();												// Quantity of selected product sales for selected year in June
 		p2_iunbuc.setPreferredSize(rowTitleDimension);
-		p2_iunbuc.setBounds(670, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iunbuc.setBounds(820, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_iunbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_iunbuc.setFont(rowTitleFont);
 		p2_iunbuc.setForeground(Color.BLACK);	
@@ -701,7 +701,7 @@ public class SPM_frame extends JFrame {
 
 		p2_iulbuc = new JLabel();												// Quantity of selected product sales for selected year in July
 		p2_iulbuc.setPreferredSize(rowTitleDimension);
-		p2_iulbuc.setBounds(740, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iulbuc.setBounds(920, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_iulbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_iulbuc.setFont(rowTitleFont);
 		p2_iulbuc.setForeground(Color.BLACK);	
@@ -709,7 +709,7 @@ public class SPM_frame extends JFrame {
 
 		p2_augbuc = new JLabel();												// Quantity of selected product sales for selected year in August
 		p2_augbuc.setPreferredSize(rowTitleDimension);
-		p2_augbuc.setBounds(810, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_augbuc.setBounds(1020, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_augbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_augbuc.setFont(rowTitleFont);
 		p2_augbuc.setForeground(Color.BLACK);	
@@ -717,7 +717,7 @@ public class SPM_frame extends JFrame {
 
 		p2_septbuc = new JLabel();												// Quantity of selected product sales for selected year in September
 		p2_septbuc.setPreferredSize(rowTitleDimension);
-		p2_septbuc.setBounds(880, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_septbuc.setBounds(1120, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_septbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_septbuc.setFont(rowTitleFont);
 		p2_septbuc.setForeground(Color.BLACK);	
@@ -725,7 +725,7 @@ public class SPM_frame extends JFrame {
 
 		p2_octbuc = new JLabel();												// Quantity of selected product sales for selected year in October
 		p2_octbuc.setPreferredSize(rowTitleDimension);
-		p2_octbuc.setBounds(950, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_octbuc.setBounds(1220, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_octbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_octbuc.setFont(rowTitleFont);
 		p2_octbuc.setForeground(Color.BLACK);	
@@ -733,7 +733,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_novbuc = new JLabel();												// Quantity of selected product sales for selected year in November
 		p2_novbuc.setPreferredSize(rowTitleDimension);
-		p2_novbuc.setBounds(1020, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_novbuc.setBounds(1320, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_novbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_novbuc.setFont(rowTitleFont);
 		p2_novbuc.setForeground(Color.BLACK);	
@@ -741,7 +741,7 @@ public class SPM_frame extends JFrame {
 
 		p2_decbuc = new JLabel();												// Quantity of selected product sales for selected year in December
 		p2_decbuc.setPreferredSize(rowTitleDimension);
-		p2_decbuc.setBounds(1090, 60, rowTitleDimension.width, rowTitleDimension.height);
+		p2_decbuc.setBounds(1420, 60, rowTitleDimension.width, rowTitleDimension.height);
 		p2_decbuc.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_decbuc.setFont(rowTitleFont);
 		p2_decbuc.setForeground(Color.BLACK);	
@@ -765,7 +765,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_febeur = new JLabel();												// Value of selected product sales for selected year in February
 		p2_febeur.setPreferredSize(rowTitleDimension);
-		p2_febeur.setBounds(390, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_febeur.setBounds(420, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_febeur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_febeur.setFont(rowTitleFont);
 		p2_febeur.setForeground(Color.BLACK);	
@@ -773,7 +773,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_mareur = new JLabel();												// Value of selected product sales for selected year in March
 		p2_mareur.setPreferredSize(rowTitleDimension);
-		p2_mareur.setBounds(460, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_mareur.setBounds(520, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_mareur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_mareur.setFont(rowTitleFont);
 		p2_mareur.setForeground(Color.BLACK);	
@@ -781,7 +781,7 @@ public class SPM_frame extends JFrame {
 
 		p2_apreur = new JLabel();												// Value of selected product sales for selected year in April
 		p2_apreur.setPreferredSize(rowTitleDimension);
-		p2_apreur.setBounds(530, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_apreur.setBounds(620, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_apreur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_apreur.setFont(rowTitleFont);
 		p2_apreur.setForeground(Color.BLACK);	
@@ -789,7 +789,7 @@ public class SPM_frame extends JFrame {
 
 		p2_maieur = new JLabel();												// Value of selected product sales for selected year in May
 		p2_maieur.setPreferredSize(rowTitleDimension);
-		p2_maieur.setBounds(600, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_maieur.setBounds(720, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_maieur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_maieur.setFont(rowTitleFont);
 		p2_maieur.setForeground(Color.BLACK);	
@@ -797,7 +797,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_iuneur = new JLabel();												// Value of selected product sales for selected year in June
 		p2_iuneur.setPreferredSize(rowTitleDimension);
-		p2_iuneur.setBounds(670, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iuneur.setBounds(820, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_iuneur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_iuneur.setFont(rowTitleFont);
 		p2_iunbuc.setForeground(Color.BLACK);	
@@ -805,7 +805,7 @@ public class SPM_frame extends JFrame {
 
 		p2_iuleur = new JLabel();												// Value of selected product sales for selected year in July
 		p2_iuleur.setPreferredSize(rowTitleDimension);
-		p2_iuleur.setBounds(740, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_iuleur.setBounds(920, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_iuleur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_iuleur.setFont(rowTitleFont);
 		p2_iuleur.setForeground(Color.BLACK);	
@@ -813,7 +813,7 @@ public class SPM_frame extends JFrame {
 
 		p2_augeur = new JLabel();												// Value of selected product sales for selected year in August
 		p2_augeur.setPreferredSize(rowTitleDimension);
-		p2_augeur.setBounds(810, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_augeur.setBounds(1020, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_augeur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_augeur.setFont(rowTitleFont);
 		p2_augeur.setForeground(Color.BLACK);	
@@ -821,7 +821,7 @@ public class SPM_frame extends JFrame {
 
 		p2_septeur = new JLabel();												// Value of selected product sales for selected year in September
 		p2_septeur.setPreferredSize(rowTitleDimension);
-		p2_septeur.setBounds(880, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_septeur.setBounds(1120, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_septeur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_septeur.setFont(rowTitleFont);
 		p2_septeur.setForeground(Color.BLACK);	
@@ -829,7 +829,7 @@ public class SPM_frame extends JFrame {
 		
 		p2_octeur = new JLabel();												// Value of selected product sales for selected year in October
 		p2_octeur.setPreferredSize(rowTitleDimension);
-		p2_octeur.setBounds(950, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_octeur.setBounds(1220, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_octeur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_octeur.setFont(rowTitleFont);
 		p2_octeur.setForeground(Color.BLACK);	
@@ -837,7 +837,7 @@ public class SPM_frame extends JFrame {
 
 		p2_noveur = new JLabel();												// Value of selected product sales for selected year in November
 		p2_noveur.setPreferredSize(rowTitleDimension);
-		p2_noveur.setBounds(1020, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_noveur.setBounds(1320, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_noveur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_noveur.setFont(rowTitleFont);
 		p2_noveur.setForeground(Color.BLACK);	
@@ -845,7 +845,7 @@ public class SPM_frame extends JFrame {
 
 		p2_deceur = new JLabel();												// Value of selected product sales for selected year in December
 		p2_deceur.setPreferredSize(rowTitleDimension);
-		p2_deceur.setBounds(1090, 90, rowTitleDimension.width, rowTitleDimension.height);
+		p2_deceur.setBounds(1420, 90, rowTitleDimension.width, rowTitleDimension.height);
 		p2_deceur.setHorizontalAlignment(SwingConstants.CENTER);
 		p2_deceur.setFont(rowTitleFont);
 		p2_deceur.setForeground(Color.BLACK);	
